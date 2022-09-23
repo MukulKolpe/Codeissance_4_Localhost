@@ -58,6 +58,7 @@
   border-radius: 13px;
   border: none;
   cursor: pointer;
+  box-shadow: #39445a 0px 0px 0px 1px inset;
 }
 
 .heroBtn:hover{
