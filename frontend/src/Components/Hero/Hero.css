@@ -1,0 +1,97 @@
+.outerBody{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image{
+  background-image: linear-gradient(
+  rgba(0,0,0,0.5), 
+  rgba(0,0,0, 0.5)), 
+  url("https://16kqg2tgn1u4ew0tl3ybl9pr-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/TSK-1317-BLOG-4-768x432.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image .hero-text{
+  color: #fff;
+  text-align: center;
+}
+
+.hero-image .hero-text h1{
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.hero-image .hero-text p{
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 10px;
+}
+
+.hero-image .hero-btn{
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.hero-image .hero-btn:hover{
+  background: #fff;
+  color: #000;
+}
+
+.heroBtn{
+  height: 30%;
+  font-size: 1.5rem;
+  margin-top: 25px;
+  width: 40%;
+  border-radius: 13px;
+  border: none;
+  cursor: pointer;
+}
+
+.heroBtn:hover{
+  color: #39445a;
+  font-weight: 700;
+  transition: ease-in-out 0.2ms;
+
+}
+
+.heroSection{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.heroImg img{
+  width: 160%;
+}
+
+.heroTxt{
+  margin-top: 120px;
+}
+
+@media only screen and (max-width: 760px){
+  .heroTxt{
+    margin-top: 60px;
+  }
+	.heroSection{
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .heroImg img{
+    width: 70%;
+    margin-top: 40px;
+  }
+}
