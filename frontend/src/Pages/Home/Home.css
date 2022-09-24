@@ -1,6 +1,19 @@
 .aboutSection{
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   margin-top: 40px;
   margin-bottom: 140px;
+}
+.home-cards {
+  margin-top: -200px;
+}
+.quote {
+  font-size: 30px;
+}
+@media only screen and (max-width: 760px) {
+  .aboutSection {
+    flex-direction: column;
+
+  }
 }

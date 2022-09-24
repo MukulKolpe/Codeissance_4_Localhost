@@ -7,6 +7,8 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import { ToastContainer, toast, Flip } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -80,6 +82,7 @@ const UploadFile = () => {
     jsonObject["profilepic"] = profilehash;
     setprofkey(fileIpfs._hash);
     console.log("Profile pic", jsonObject?.profilepic);
+    notify();
   };
 
   const onSubmitAdhar = async (e) => {
@@ -96,6 +99,7 @@ const UploadFile = () => {
     jsonObject["adharcard"] = adharhash;
     setadhkey(fileIpfs._hash);
     console.log("Adharcard", jsonObject?.adharcard);
+    notify();
   };
 
   const onSubmitPan = async (e) => {
@@ -111,6 +115,7 @@ const UploadFile = () => {
     jsonObject["pancard"] = panhash;
     setpankey(fileIpfs._hash);
     console.log("Pancard", jsonObject?.pancard);
+    notify();
   };
 
   const onSubmitMarraige = async (e) => {
@@ -125,6 +130,7 @@ const UploadFile = () => {
     setmarkey(fileIpfs._hash);
     jsonObject["marraigecert"] = marraigehash;
     console.log("marraigecert", jsonObject?.marraigecert);
+    notify();
   };
 
   const onSubmitBirthCert = async (e) => {
@@ -139,6 +145,7 @@ const UploadFile = () => {
     jsonObject["birthcert"] = birthcerthash;
     setbirthkey(fileIpfs._hash);
     console.log("birthcert", jsonObject?.birthcert);
+    notify();
   };
 
   if (!isAuthenticated) {
@@ -151,6 +158,7 @@ const UploadFile = () => {
       </div>
     );
   }
+  const notify = () => toast.success("File Uploaded Successfully!");
 
   return (
     <div>
@@ -397,6 +405,18 @@ const UploadFile = () => {
             </Grid>
           </Box>
         </form>
+        <ToastContainer
+          position="top-right"
+          autoClose={500}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          transition={Flip}
+        />
       </div>
     </div>
   );
