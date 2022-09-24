@@ -1,3 +1,20 @@
 input {
     padding: 0.1rem;
 }
+.text-field {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+
+}
+.upload-file {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    
+}
+.upload-btn {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #000;
+}
