@@ -40,6 +40,18 @@ const UploadFile = () => {
     name: name,
     lastname: lastName,
   };
+  
+
+  const finalObj = {
+    adharhash: adhkey,
+    profilehash: profkey,
+    panhash: pankey,
+    marraigehash: markey,
+    birthcerthash: birthkey,
+  }
+
+  console.log("final", finalObj);
+
 
   let jsonObject = {
     profilepic: profilehash,
@@ -147,7 +159,7 @@ const UploadFile = () => {
 
   return (
     <div>
-      <h1>Welcome {user.get("ethAddress")}</h1>\
+      <h1>Welcome {user.get("ethAddress")} 👋</h1>
       <div className="profile-pic-update-container">
         {isAuthenticated ? null : (
           <button onClick={() => authenticate()}>login</button>
@@ -156,7 +168,7 @@ const UploadFile = () => {
         <form onSubmit={onSubmitPhoto}>
         <Box sx={{ flexGrow: 1,margin:"1rem" }}>
         <Grid container spacing={2}>
-          <Grid item xs={4}>
+          <Grid item xs={3}>
               <label htmlFor="profilePhoto" className="">
                 <span style={{color:"red"}}>*</span>
                 Fill Personal Information
@@ -185,13 +197,13 @@ const UploadFile = () => {
         
         <Box sx={{ flexGrow: 1,margin:"1rem" }}>
           <Grid container spacing={2}>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
                 <label htmlFor="profilePhoto" className="">
                 <span style={{color:"red"}}>*</span>
                   Select Profile Picture
                 </label>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
                 <input
                   className=""
@@ -203,7 +215,7 @@ const UploadFile = () => {
                 />
               </Item>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
               <input
                 type="button"
@@ -213,17 +225,25 @@ const UploadFile = () => {
               />
               </Item>
             </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <input 
+                  type="text"
+                  value={profkey ? profkey : 'generating hash for you'}
+                />
+              </Item>
+            </Grid>
           </Grid>
         </Box>
         <Box sx={{ flexGrow: 1,margin:"1rem" }}>
           <Grid container spacing={2}>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
                 <label htmlFor="profilePhoto" className="">
                 <span style={{color:"red"}}>*</span>
                   Upload Adhar Card
                 </label>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
                 <input
                   className=""
@@ -235,7 +255,7 @@ const UploadFile = () => {
                 />
               </Item>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
                 <input
                   type="button"
@@ -245,18 +265,26 @@ const UploadFile = () => {
                 />
               </Item>
             </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <input 
+                  type="text"
+                  value={adhkey ? adhkey : 'generating hash for you'}
+                />
+              </Item>
+            </Grid>
           </Grid>
         </Box>
         <Box sx={{ flexGrow: 1,margin:"1rem" }}>
           <Grid container spacing={2}>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
                 
                 <label htmlFor="profilePhoto" className="">
                 <span style={{color:"red"}}>*</span>
                   Upload Pan Card
                 </label>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
                 <input
                   className=""
@@ -268,28 +296,37 @@ const UploadFile = () => {
                 />
               </Item>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
                 <input
                   type="button"
-                  value="Next"
+                  value="Upload"
                   className="btn btn-primary btn-block mt-1"
                   onClick={onSubmitPan}
                 />
               </Item>
+            </Grid> 
+            <Grid item xs={3}>
+              <Item>
+                <input 
+                  type="text"
+                  value={pankey ? pankey : 'generating hash for you'}
+                />
+              </Item>
             </Grid>
+
           </Grid>
         </Box>
         
         <Box sx={{ flexGrow: 1,margin:"1rem" }}>
           <Grid container spacing={2}>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
                 <label htmlFor="profilePhoto" className="">
                 <span style={{color:"red"}}>*</span>
                   Upload Birth Certificate
                 </label>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
                 <input
                   className=""
@@ -301,13 +338,21 @@ const UploadFile = () => {
                 />
               </Item>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
                 <input
                   type="button"
-                  value="Next"
+                  value="Upload"
                   className="btn btn-primary btn-block mt-1"
                   onClick={onSubmitBirthCert}
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <input 
+                  type="text"
+                  value={birthkey ? birthkey : 'generating hash for you'}
                 />
               </Item>
             </Grid>
@@ -315,12 +360,12 @@ const UploadFile = () => {
         </Box>
         <Box sx={{ flexGrow: 1,margin:"1rem" }}>
           <Grid container spacing={2}>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
                 <label htmlFor="profilePhoto" className="">
                   Upload Marriage Certificate
                 </label>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
                 <input
                   className=""
@@ -332,28 +377,27 @@ const UploadFile = () => {
                 />
               </Item>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Item>
                 <input
                   type="button"
-                  value="Next"
+                  value="Upload"
                   className="btn btn-primary btn-block mt-1"
                   onClick={onSubmitMarraige}
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <input 
+                  type="text"
+                  value={markey ? markey : 'generating hash for you'}
                 />
               </Item>
             </Grid>
           </Grid>
         </Box>
         </form>
-
-        <div>
-          <h1>Hash values</h1>
-          <h2>Profile Pic Hash: {profkey ? profkey : 'fetching key for you'}</h2>
-          <h2>Adhar Card Hash is : {adhkey ? adhkey : 'fetching key for you'}</h2>
-          <h2> Pan Card Hash is: {pankey ? pankey : 'fetching key for you'}</h2>
-          <h2> Marraige cert Hash is: {markey ? markey : 'fetching key for you'}</h2>
-          <h2>Birth cert hash is : {birthkey ? birthkey : 'fetching key for you'}</h2>
-        </div>
       </div>
     </div>
   );
