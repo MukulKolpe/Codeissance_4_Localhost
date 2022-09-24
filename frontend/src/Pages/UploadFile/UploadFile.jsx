@@ -3,6 +3,19 @@ import { useState, useEffect, React } from "react";
 import { useMoralis, useMoralisFile } from "react-moralis";
 import FingerprintIcon from "@mui/icons-material/Fingerprint";
 import Button from "@mui/material/Button";
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
 
 const UploadFile = () => {
   let adharhash = "";
@@ -124,7 +137,7 @@ const UploadFile = () => {
   if (!isAuthenticated) {
     return (
       <div className="button" style={{ marginTop: "60px" }}>
-        <Button onClick={() => authenticate()} variant="outlined">
+        <Button onClick={() =>  authenticate()} variant="outlined">
           <FingerprintIcon aria-label="fingerprint" color="primary" />
           Connect with Wallet
         </Button>
@@ -141,117 +154,196 @@ const UploadFile = () => {
         )}
 
         <form onSubmit={onSubmitPhoto}>
-          <div className="mb-3">
-            <label htmlFor="profilePhoto" className="form-label">
-              Select a Profile Pic
-            </label>
+        <Box sx={{ flexGrow: 1,margin:"1rem" }}>
+        <Grid container spacing={2}>
+          <Grid item xs={4}>
+              <label htmlFor="profilePhoto" className="">
+                <span style={{color:"red"}}>*</span>
+                Fill Personal Information
+              </label>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>
             <input
-              className="form-control"
-              type="file"
-              accept="image/*"
-              multiple={false}
-              id="profilePhoto"
-              onChange={onChangePhoto}
-            />
-          </div>
-          <input
             type="text"
-            placeholder="Enter name"
-            onChange={(e) => {
-              setname(e.target.value);
-            }}
+            placeholder='Enter name'
+            onChange={(e) => {setname(e.target.value)}}
           />
-          <input
+            </Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>
+            <input
             type="text"
-            placeholder="Enter Last Name"
-            onChange={(e) => {
-              setlastName(e.target.value);
-            }}
+            placeholder='Enter Last Name'
+            onChange={(e) => {setlastName(e.target.value)}}
           />
-          <input
-            type="button"
-            value="Upload"
-            className="btn btn-primary btn-block mt-1"
-            onClick={onSubmitPhoto}
-          />
-          <div>
-            <label htmlFor="profilePhoto" className="form-label">
-              Upload Adhar Card
-            </label>
-            <input
-              className="form-control"
-              type="file"
-              accept="image/*"
-              multiple={false}
-              id="profilePhoto"
-              onChange={onChangePhoto}
-            />
-            <input
-              type="button"
-              value="Upload"
-              className="btn btn-primary btn-block mt-1"
-              onClick={onSubmitAdhar}
-            />
-          </div>
-          <div>
-            <label htmlFor="profilePhoto" className="form-label">
-              Upload Pan Card
-            </label>
-            <input
-              className="form-control"
-              type="file"
-              accept="image/*"
-              multiple={false}
-              id="profilePhoto"
-              onChange={onChangePhoto}
-            />
-            <input
-              type="button"
-              value="Next"
-              className="btn btn-primary btn-block mt-1"
-              onClick={onSubmitPan}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="profilePhoto" className="form-label">
-              Upload Marraige Certificate
-            </label>
-            <input
-              className="form-control"
-              type="file"
-              accept="image/*"
-              multiple={false}
-              id="profilePhoto"
-              onChange={onChangePhoto}
-            />
-            <input
-              type="button"
-              value="Next"
-              className="btn btn-primary btn-block mt-1"
-              onClick={onSubmitMarraige}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="profilePhoto" className="form-label">
-              Upload Birth Certificate
-            </label>
-            <input
-              className="form-control"
-              type="file"
-              accept="image/*"
-              multiple={false}
-              id="profilePhoto"
-              onChange={onChangePhoto}
-            />
-            <input
-              type="button"
-              value="Next"
-              className="btn btn-primary btn-block mt-1"
-              onClick={onSubmitBirthCert}
-            />
-          </div>
+            </Item>
+          </Grid>
+        </Grid>
+      </Box>
+        
+        <Box sx={{ flexGrow: 1,margin:"1rem" }}>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+                <label htmlFor="profilePhoto" className="">
+                <span style={{color:"red"}}>*</span>
+                  Select Profile Picture
+                </label>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <input
+                  className=""
+                  type="file"
+                  accept="image/*"
+                  multiple={false}
+                  id="profilePhoto"
+                  onChange={onChangePhoto}
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+              <input
+                type="button"
+                value="Upload"
+                className="btn btn-primary btn-block mt-1"
+                onClick={onSubmitPhoto}
+              />
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
+        <Box sx={{ flexGrow: 1,margin:"1rem" }}>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+                <label htmlFor="profilePhoto" className="">
+                <span style={{color:"red"}}>*</span>
+                  Upload Adhar Card
+                </label>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <input
+                  className=""
+                  type="file"
+                  accept="image/*"
+                  multiple={false}
+                  id="profilePhoto"
+                  onChange={onChangePhoto}
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <input
+                  type="button"
+                  value="Upload"
+                  className="btn btn-primary btn-block mt-1"
+                  onClick={onSubmitAdhar}
+                />
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
+        <Box sx={{ flexGrow: 1,margin:"1rem" }}>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+                
+                <label htmlFor="profilePhoto" className="">
+                <span style={{color:"red"}}>*</span>
+                  Upload Pan Card
+                </label>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <input
+                  className=""
+                  type="file"
+                  accept="image/*"
+                  multiple={false}
+                  id="profilePhoto"
+                  onChange={onChangePhoto}
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <input
+                  type="button"
+                  value="Next"
+                  className="btn btn-primary btn-block mt-1"
+                  onClick={onSubmitPan}
+                />
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
+        
+        <Box sx={{ flexGrow: 1,margin:"1rem" }}>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+                <label htmlFor="profilePhoto" className="">
+                <span style={{color:"red"}}>*</span>
+                  Upload Birth Certificate
+                </label>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <input
+                  className=""
+                  type="file"
+                  accept="image/*"
+                  multiple={false}
+                  id="profilePhoto"
+                  onChange={onChangePhoto}
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <input
+                  type="button"
+                  value="Next"
+                  className="btn btn-primary btn-block mt-1"
+                  onClick={onSubmitBirthCert}
+                />
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
+        <Box sx={{ flexGrow: 1,margin:"1rem" }}>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+                <label htmlFor="profilePhoto" className="">
+                  Upload Marriage Certificate
+                </label>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <input
+                  className=""
+                  type="file"
+                  accept="image/*"
+                  multiple={false}
+                  id="profilePhoto"
+                  onChange={onChangePhoto}
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <input
+                  type="button"
+                  value="Next"
+                  className="btn btn-primary btn-block mt-1"
+                  onClick={onSubmitMarraige}
+                />
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
         </form>
 
         <div>
