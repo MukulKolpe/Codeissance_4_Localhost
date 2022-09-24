@@ -3,7 +3,7 @@ import "./Hero.css";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import bgImage from '../../Assets/image.png'
+import bgImage from "../../Assets/image.png";
 const Hero = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -15,7 +15,7 @@ const Hero = () => {
         <div class="heroTxt">
           <h1>Create your Identity Now!</h1>
           <button class="heroBtn" onClick={() => navigate("/upload")}>
-            Upload Now
+            Start Now
           </button>
         </div>
         <div class="heroImg">
