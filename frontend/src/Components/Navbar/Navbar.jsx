@@ -31,6 +31,7 @@ const Navbar = () => {
         <div className="navLink">
           <Link to="/">Home</Link>
           <Link to="/upload">Upload</Link>
+          <Link to="#about" smooth={true} offset={-250}duration={500}>About</Link>
         </div>
         <button className="nav-btn nav-close-btn" onClick={hideNavbar}>
           <FaTimes />
