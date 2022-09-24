@@ -41,14 +41,11 @@ const Home = () => {
                 Secure your documents
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                A blockchain is essentially a digital ledger of transactions
+                that is duplicated and distributed across the entire network of
+                computer systems on the blockchain.
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Share</Button>
-              <Button size="small">Learn More</Button>
-            </CardActions>
           </Card>
           <Card sx={{ maxWidth: 345 }}>
             <CardMedia
@@ -62,14 +59,11 @@ const Home = () => {
                 Get verified faster
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                A blockchain is essentially a digital ledger of transactions
+                that is duplicated and distributed across the entire network of
+                computer systems on the blockchain.
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Share</Button>
-              <Button size="small">Learn More</Button>
-            </CardActions>
           </Card>
           <Card sx={{ maxWidth: 345 }}>
             <CardMedia
@@ -83,14 +77,11 @@ const Home = () => {
                 Create your digital identity
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                A blockchain is essentially a digital ledger of transactions
+                that is duplicated and distributed across the entire network of
+                computer systems on the blockchain.
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Share</Button>
-              <Button size="small">Learn More</Button>
-            </CardActions>
           </Card>
         </div>
       </div>
