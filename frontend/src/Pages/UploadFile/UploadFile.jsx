@@ -12,6 +12,11 @@ const UploadFile = () => {
   let birthcerthash = "";
   const { authenticate, isAuthenticated, user } = useMoralis();
   const { saveFile, moralisFile } = useMoralisFile();
+  const [profkey,setprofkey] = useState('');
+  const [adhkey,setadhkey] = useState('');
+  const [pankey,setpankey] = useState('');
+  const [markey,setmarkey] = useState('');
+  const [birthkey,setbirthkey] = useState('');
   const [name, setname] = useState();
   const [lastName, setlastName] = useState();
   // const[adharhash,setAdharHash] = useState();
@@ -34,9 +39,8 @@ const UploadFile = () => {
   useEffect(() => {
     if (user) {
       setEth(user.get("ethAddress"));
-    }
-  }, [user]);
-
+    }    
+  }, [user,profilehash]);
   const onChangePhoto = (e) => {
     setPhotoFile(e.target.files[0]);
     setPhotoFileName(e.target.files[0].name);
@@ -52,6 +56,7 @@ const UploadFile = () => {
     profilehash = await fileIpfs._hash;
     // console.log(profilehash)
     jsonObject["profilepic"] = profilehash;
+    setprofkey(fileIpfs._hash)
     console.log("Profile pic", jsonObject?.profilepic);
   };
 
@@ -67,6 +72,7 @@ const UploadFile = () => {
     // console.log(adharhash)
     jsonObject.profilepic = profilehash;
     jsonObject["adharcard"] = adharhash;
+    setadhkey(fileIpfs._hash)
     console.log("Adharcard", jsonObject?.adharcard);
   };
 
@@ -81,6 +87,7 @@ const UploadFile = () => {
     panhash = await fileIpfs._hash;
 
     jsonObject["pancard"] = panhash;
+    setpankey(fileIpfs._hash)
     console.log("Pancard", jsonObject?.pancard);
   };
 
@@ -93,10 +100,12 @@ const UploadFile = () => {
     console.log(fileIpfs);
     // console.log(fileIpfs._hash)
     marraigehash = await fileIpfs._hash;
-
+    setmarkey(fileIpfs._hash)
     jsonObject["marraigecert"] = marraigehash;
     console.log("marraigecert", jsonObject?.marraigecert);
   };
+
+  
 
   const onSubmitBirthCert = async (e) => {
     const file = photoFile;
@@ -107,8 +116,8 @@ const UploadFile = () => {
     console.log(fileIpfs);
     // console.log(fileIpfs._hash)
     birthcerthash = await fileIpfs._hash;
-
     jsonObject["birthcert"] = birthcerthash;
+    setbirthkey(fileIpfs._hash)
     console.log("birthcert", jsonObject?.birthcert);
   };
 
@@ -244,6 +253,15 @@ const UploadFile = () => {
             />
           </div>
         </form>
+
+        <div>
+          <h1>Hash values</h1>
+          <h2>Profile Pic Hash: {profkey ? profkey : 'fetching key for you'}</h2>
+          <h2>Adhar Card Hash is : {adhkey ? adhkey : 'fetching key for you'}</h2>
+          <h2> Pan Card Hash is: {pankey ? pankey : 'fetching key for you'}</h2>
+          <h2> Marraige cert Hash is: {markey ? markey : 'fetching key for you'}</h2>
+          <h2>Birth cert hash is : {birthkey ? birthkey : 'fetching key for you'}</h2>
+        </div>
       </div>
     </div>
   );
