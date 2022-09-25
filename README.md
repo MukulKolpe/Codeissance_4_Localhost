@@ -52,7 +52,7 @@ https://github.com/[your_github_username]/Codeissance_4_Localhost.git
 
 ```
 REACT_APP_appId = Paste your id here
-REACT_APP_serverUrl = Paste you url here
+REACT_APP_serverUrl = Paste your url here
 ```
 
 
@@ -62,11 +62,13 @@ REACT_APP_serverUrl = Paste you url here
  yarn start
 ```
 
-# User Interface
+# User Interface 💻
 
 ## Main Page
 
-![Main page](https://user-images.githubusercontent.com/87575770/192141141-f4fb5979-7ee7-4150-a300-0e5be4637501.JPG)
+![Main page](https://user-images.githubusercontent.com/87575770/192141141-f4fb5979-7ee7-4150-a300-0e5be4637501.JPG)  
+![image](https://user-images.githubusercontent.com/78664749/192143032-50ff5526-bd8c-4082-b200-71a7f227b936.png)
+
 
 ## Upload File Page
 
