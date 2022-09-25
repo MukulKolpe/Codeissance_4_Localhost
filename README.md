@@ -62,12 +62,14 @@ REACT_APP_serverUrl = Paste you url here
  yarn start
 ```
 
+# User Interface
 
+## Main Page
 
+![Main page](https://user-images.githubusercontent.com/87575770/192141141-f4fb5979-7ee7-4150-a300-0e5be4637501.JPG)
 
+## Upload File Page
 
-
-
-
+![Upload File Page](https://user-images.githubusercontent.com/87575770/192141242-3cfbc928-8f5a-4761-b90e-a77a6e6a3c6e.JPG)
 
 
